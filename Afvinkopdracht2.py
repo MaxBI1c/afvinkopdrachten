@@ -198,109 +198,139 @@ def main():
 
     ### OPDRACHT 3 ###
     # Bestand voor opdracht 3
-    gist = "yeast_genes.csv"
-    file = open(gist, "r")
-    yeast = []
-    #status = 0
+    # gist = "yeast_genes.csv"
+    # file = open(gist, "r")
+    # yeast = []
+    # #status = 0
+    # nummer = 0
+    # for lines in file:
+    #     lines = lines.replace("\n", "")
+    #
+    #
+    #     lines = lines.split(",")
+    #     #print(lines)
+    #     if nummer == 0:
+    #         status = lines.index("validation")
+    #     #status += status
+    #         #print(status)
+    #         yeast.append(lines)
+    #         nummer += 1
+    #     else:
+    #         yeast.append(lines)
+    #         nummer+=1
+    # #print(yeast)
+    #
+    # #status = yeast.index("validation")
+    # #print(status)
+    #
+    # #status = yeast[0].index("validation")
+    # #print(status)
+    # #print(yeast[0][1])
+    # state_of_gene = []
+    # total_states_of_gene = []
+    # index = 0
+    # for item in yeast:
+    #     #print(item)
+    #
+    #     if yeast[index][status] not in state_of_gene:
+    #         state_of_gene.append(yeast[index][status])
+    #         #print(state_of_gene)
+    #         total_states_of_gene.append(yeast[index][status])
+    #         index +=1
+    #     else:
+    #         total_states_of_gene.append(yeast[index][status])
+    #         index+=1
+    #
+    # if "validation" in state_of_gene:
+    #
+    #     gello = state_of_gene.index("validation")
+    #     state_of_gene.pop(gello)
+    #     #print(state_of_gene)
+    # #print(state_of_gene)
+    # #print(state_of_gene)
+    # getal = 0
+    # total_values = []
+    # for items in state_of_gene:
+    #     values = total_states_of_gene.count(state_of_gene[getal])
+    #
+    #     total_values.append(values)
+    #     getal+=1
+    # #print(total_values)
+    # #print(total_states_of_gene)
+    # #print(state_of_gene)
+    # plt.bar(state_of_gene, total_values)
+    # plt.title("twee regels op dezelfde grafiek")
+    # plt.xlabel("status van gen")
+    # plt.ylabel("aantal keer dat genstatus voorkomt")
+    # plt.title("het aantal voorkomen in bestand van genstatus")
+    # plt.legend(["aantal dat de genstatus voorkomt in het bestand "])
+    # plt.show()
+
+    ### OPDRACHT 4 ###
+    # Bestand voor opdracht 4
+    test = "test.csv"
+    file = open(test, "r")
+
+    eten = []
     nummer = 0
     for lines in file:
         lines = lines.replace("\n", "")
 
-
-        lines = lines.split(",")
-        #print(lines)
+        lines = lines.split(";")
+        # print(lines)
         if nummer == 0:
             status = lines.index("validation")
-        #status += status
-            #print(status)
-            yeast.append(lines)
+            # status += status
+            # print(status)
+            eten.append(lines)
             nummer += 1
         else:
-            yeast.append(lines)
-            nummer+=1
-    #print(yeast)
+            eten.append(lines)
+            nummer += 1
+    # print(yeast)
 
-    #status = yeast.index("validation")
-    #print(status)
+    # status = yeast.index("validation")
+    # print(status)
 
-    #status = yeast[0].index("validation")
-    #print(status)
-    #print(yeast[0][1])
-    state_of_gene = []
-    total_states_of_gene = []
+    # status = yeast[0].index("validation")
+    # print(status)
+    # print(yeast[0][1])
+    state_of_eten = []
+    total_states_of_eten = []
     index = 0
-    for item in yeast:
-        #print(item)
+    for item in eten:
+        # print(item)
 
-        if yeast[index][status] not in state_of_gene:
-            state_of_gene.append(yeast[index][status])
-            #print(state_of_gene)
-            total_states_of_gene.append(yeast[index][status])
-            index +=1
+        if eten[index][status] not in state_of_eten:
+            state_of_eten.append(eten[index][status])
+            # print(state_of_gene)
+            total_states_of_eten.append(eten[index][status])
+            index += 1
         else:
-            total_states_of_gene.append(yeast[index][status])
-            index+=1
+            total_states_of_eten.append(eten[index][status])
+            index += 1
 
-    if "validation" in state_of_gene:
-
-        gello = state_of_gene.index("validation")
-        state_of_gene.pop(gello)
-        #print(state_of_gene)
-    #print(state_of_gene)
-    #print(state_of_gene)
+    if "validation" in state_of_eten:
+        gello = state_of_eten.index("validation")
+        state_of_eten.pop(gello)
+        # print(state_of_gene)
+    # print(state_of_gene)
+    # print(state_of_gene)
     getal = 0
-    total_values = []
-    for items in state_of_gene:
-        values = total_states_of_gene.count(state_of_gene[getal])
+    total_eten = []
+    for items in state_of_eten:
+        values = total_states_of_eten.count(state_of_eten[getal])
 
-        total_values.append(values)
-        getal+=1
-    print(total_values)
-    #print(total_states_of_gene)
-    #print(state_of_gene)
-    plt.bar(state_of_gene, total_values)
-    plt.title("twee regels op dezelfde grafiek")
-    plt.xlabel("status van gen")
-    plt.ylabel("aantal keer dat genstatus voorkomt")
-    plt.legend("labels")
+        total_eten.append(values)
+        getal += 1
+
+    plt.bar(state_of_eten, total_eten)
+    plt.xlabel("status van unieke identifier")
+    plt.ylabel("aantal keer dat unieke identifier voorkomt")
+    plt.title("het aantal voorkomen in bestand van status unieke identifier")
+    plt.legend(["aantal dat status van de unieke identifier voorkomt in het bestand "])
     plt.show()
 
-    ### OPDRACHT 4 ###
-    # Bestand voor opdracht 4
-    #test = "test.csv"
-    #file = open(test, "r")
-
-    #eten = []
-
-    #status = 0
-    #for lines in file:
-        #lines = lines.replace("\n", "")
-
-
-        #lines = lines.split(";")
-
-        #status = lines.index("validation")
-        #status += status
-        #print(status)
-     #   eten.append(lines)
-
-    #print(yeast)
-    #status = yeast.index("validation")
-
-    #status = eten.index("validation")
-    #print(status)
-    #state_of_eten = []
-    #total_states_of_eten = []
-    #index = 0
-    #for item in eten:
-     #   if eten[index][status] not in state_of_eten:
-      #      state_of_eten.append(eten[index][status])
-            #print(state_of_gene)
-       #     total_states_of_eten.append(eten[status])
-        #else:
-         #   total_states_of_eten.append(eten[status])
-    #print(state_of_eten)
-    #plt.bar(state_of_eten, total_states_of_eten, label = "")
 
 main()
 
